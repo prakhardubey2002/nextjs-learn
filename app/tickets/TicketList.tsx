@@ -2,6 +2,7 @@
 import TicketCard from '@/components/TicketCard'
 import usefetch from '@/hooks/usefetch'
 import type { Ticket } from '@/types'
+import Link from 'next/link'
 
 const TicketList = () => {
     const { data, error, isLoading } = usefetch<Ticket[]>('http://localhost:4000/tickets', {
@@ -14,7 +15,9 @@ const TicketList = () => {
         <main>
             <h1>Our Tickets</h1>
             {data?.map((ticket) => (
-                <TicketCard key={ticket.id} ticket={ticket} />
+                <Link href={`/tickets/${ticket.id}`} key={ticket.id}>
+                    <TicketCard ticket={ticket} />
+                </Link>
             ))}
         </main>
     )
