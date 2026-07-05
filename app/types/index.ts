@@ -7,3 +7,5 @@ export interface Ticket {
   priority: TicketPriority
   user_email: string
 }
+
+export type CreateTicketInput = Omit<Ticket, 'id'>
