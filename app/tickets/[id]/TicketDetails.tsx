@@ -37,7 +37,6 @@ const TicketDetails = ({ id }: { id: string }) => {
     const { data, error, isLoading } = usefetch<Ticket>(
         `http://localhost:4000/tickets/${id}`
     )
-    if (error) return <div>Error: {error.message}</div>
     if (isLoading) return <div>Loading...</div>
     if (!data) return notFound();
 
