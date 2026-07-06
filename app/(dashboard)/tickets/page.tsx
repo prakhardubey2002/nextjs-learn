@@ -1,5 +1,5 @@
-import Loading from '@/Loading'
-import TicketList from '@/tickets/TicketList'
+import Loading from '@/(dashboard)/Loading'
+import TicketList from "@/(dashboard)/tickets/TicketList"
 import { Suspense } from 'react'
 
 const page = () => {
